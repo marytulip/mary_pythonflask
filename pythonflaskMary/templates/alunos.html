@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <a href="/carros/add">Adicionar</a>
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+        <div class="message">
+            {{ msg }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <section>
+        <table>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
+            {% for carros in dados %}
+            <tr>
+                <td>{{carros.marca}}</td>
+                <td>{{carros.modelo}}</td>
+                <td>{{carros.ano}}</td>
+                <td><a href="/carros/edit/{{carros.id_carros}}">[E]</a></td>
+                <td><a href="/carros/remove/{{carros.id_carros}}">[X]</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}

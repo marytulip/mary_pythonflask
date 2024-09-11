@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <h1>{{ msg }}</h1> 
+        {% endfor %}
+    {% endif %}
+    <div class="entrada">
+        <form action="/carros/editsave" method="post">
+            <input type="hidden" name="id" value="{{dados.id_carros}}">
+            <label for="marca">Marca:</label>
+            <input type="text" name="marca" id="{{dados.marca}}">
+            <label for="modelo">Modelo:</label>
+            <input type="text" name="modelo" id="{{dados.modelo}}">
+            <label for="ano">Ano:</label>
+            <input type="number" name="ano" id="{{dados.ano}}">
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+{% endblock %}
