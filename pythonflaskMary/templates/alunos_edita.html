@@ -8,14 +8,14 @@
         {% endfor %}
     {% endif %}
     <div class="entrada">
-        <form action="/carros/editsave" method="post">
-            <input type="hidden" name="id" value="{{dados.id_carros}}">
-            <label for="marca">Marca:</label>
-            <input type="text" name="marca" id="{{dados.marca}}">
-            <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" id="{{dados.modelo}}">
-            <label for="ano">Ano:</label>
-            <input type="number" name="ano" id="{{dados.ano}}">
+        <form action="/alunos/editsave" method="post">
+            <input type="hidden" name="id" value="{{dados.id_alunos}}">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="{{dados.nome}}">
+            <label for="matricula">Matricula:</label>
+            <input type="text" name="matricula" id="{{dados.matricula}}">
+            <label for="idade">idade:</label>
+            <input type="number" name="idade" id="{{dados.idade}}">
             <button type="submit">Salvar</button>
         </form>
     </div>
