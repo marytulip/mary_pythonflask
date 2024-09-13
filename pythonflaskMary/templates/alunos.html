@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <a href="/carros/add">Adicionar</a>
+    <a href="/alunos/add">Adicionar</a>
     {% set mensagens = get_flashed_messages() %}
     {% if mensagens %}
         {% for msg in mensagens %}
@@ -13,19 +13,19 @@
     <section>
         <table>
             <tr>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Ano</th>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Idade</th>
                 <th>Editar</th>
                 <th>Remover</th>
             </tr>
-            {% for carros in dados %}
+            {% for alunos in dados %}
             <tr>
-                <td>{{carros.marca}}</td>
-                <td>{{carros.modelo}}</td>
-                <td>{{carros.ano}}</td>
-                <td><a href="/carros/edit/{{carros.id_carros}}">[E]</a></td>
-                <td><a href="/carros/remove/{{carros.id_carros}}">[X]</a></td>
+                <td>{{alunos.nome}}</td>
+                <td>{{alunos.matricula}}</td>
+                <td>{{alunos.idade}}</td>
+                <td><a href="/alunos/edit/{{alunos.id_alunos}}">[E]</a></td>
+                <td><a href="/alunos/remove/{{alunos.id_alunos}}">[X]</a></td>
             </tr>
             {% endfor %}
         </table>
