@@ -31,7 +31,7 @@ def index():
     return render_template('index.html')
 
 @app.route("/alunos")
-def carros():
+def alunos():
     alu = Alunos.query.all()
     return render_template("alunos.html", dados=alu)
 
@@ -85,8 +85,8 @@ def alunos_edit_save():
     if id and nome and matricula and idade:
         alunos = Alunos.query.get(id)
         alunos.nome = nome
-        carro.matricula = matricula
-        carro.idade = idade
+        alunos.matricula = matricula
+        alunos.idade = idade
         db.session.commit()
         flash("Dados alterados com sucesso!!")
         return redirect("/alunos")
